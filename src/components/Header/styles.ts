@@ -21,14 +21,30 @@ export const Container = styled.div<ContainerProps>`
         color: #fff;
         text-decoration: none;
         font-size: 16px;
+        opacity: 0.6;
         transition: opacity 0.2s;
+        position: relative;
 
         & + a {
           margin-left: 32px;
         }
 
         &:hover {
-          opacity: 0.6;
+          opacity: 1;
+        }
+
+        &.active {
+          opacity: 1;
+
+          &:after {
+            content: '';
+            width: 73px;
+            height: 2px;
+            background: #ff872c;
+            position: absolute;
+            top: 30px;
+            left: 0;
+          }
         }
       }
     }
